@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - main  # Vérifiez l'indentation et la branche
+      - main
   pull_request:
     branches:
       - main
@@ -14,18 +14,20 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4  # Correction: 'users' à 'uses'
+      uses: actions/checkout@v4
 
     - name: Install Node.js
-      uses: actions/setup-node@v3  # Correction: 'users' à 'uses'
+      uses: actions/setup-node@v3
       with:
-        node-version: 22
+        node-version: '22'
 
     - name: Install Dependencies
-      run: npm install  # Correction: 'nmp' à 'npm'
+      run: npm install
 
     - name: ESLint (JS/TS) Action
-      uses: iCrawl/action-eslint@v1  # Correction: 'users' à 'uses'
+      uses: iCrawl/action-eslint@v1
+      with:
+        custom-glob: src  # Vous pouvez définir le répertoire à analyser (si nécessaire)
 
     - name: Run Tests
       run: npm test
