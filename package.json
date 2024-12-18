@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "semver": "^7.6.3"
+  },
+  "name": "package.json",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "ceci est mon package",
+  "repository": {
+    "type": "git",
+    "url": "\"homepage\": \"https://github.com/owner/project#readme\""
+  },
+  "keywords": []
+  
+}
