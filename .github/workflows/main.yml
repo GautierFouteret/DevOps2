@@ -1,6 +1,6 @@
 name : CI PipLine
 
-  on :
+  on:
     push:
       branches:
       -master
