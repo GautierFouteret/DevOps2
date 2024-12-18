@@ -1,31 +1,33 @@
-name : CI PipLine
+name: CI Pipeline
 
-  on:
-    push:
-      branches:
-      -master
-    pull_request:
-      branches:
-        - master
+on:
+  push:
+    branches:
+      - master  # Vérifiez l'indentation et la branche
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-    - users: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4  # Correction: 'users' à 'uses'
 
-    - name : Install Node
-      users: action/setup-node@v3
+    - name: Install Node.js
+      uses: actions/setup-node@v3  # Correction: 'users' à 'uses'
       with:
-        node-version: 22
+        node-version: '22'
 
-    - name: Install Dependancies
-      run: nmp install
+    - name: Install Dependencies
+      run: npm install  # Correction: 'nmp' à 'npm'
 
-    - name : ESLint (JS/TS) Action
-      users: iCrawl/action-eslint@v1
+    - name: ESLint (JS/TS) Action
+      uses: iCrawl/action-eslint@v1  # Correction: 'users' à 'uses'
 
-    - name: Tests
+    - name: Run Tests
       run: npm test
 
+      
