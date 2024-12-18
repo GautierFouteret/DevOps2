@@ -1,6 +1,6 @@
 name : CI PipLine
 
-  on:
+  on :
     push:
       branches:
       -master
@@ -29,4 +29,3 @@ jobs:
     - name: Tests
       run: npm test
 
-      
