@@ -3,10 +3,10 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - master  # Vérifiez l'indentation et la branche
+      - main  # Vérifiez l'indentation et la branche
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-test:
@@ -19,7 +19,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v3  # Correction: 'users' à 'uses'
       with:
-        node-version: '22'
+        node-version: 22
 
     - name: Install Dependencies
       run: npm install  # Correction: 'nmp' à 'npm'
@@ -30,4 +30,3 @@ jobs:
     - name: Run Tests
       run: npm test
 
-      
