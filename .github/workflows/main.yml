@@ -13,11 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - users: action/checkout@v4
-    
+    - users: actions/checkout@v4
+
+    - name : Install Node
+      users: action/setup-node@v3
+      with:
+        node-version: 22
+
+    - name: Install Dependancies
+      run: nmp install
+
     - name : ESLint (JS/TS) Action
       users: iCrawl/action-eslint@v1
 
     - name: Tests
       run: npm test
-  
+
+      
